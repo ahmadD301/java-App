@@ -1,0 +1,41 @@
+Pane:hover{
+    -fx-background-color: #DDDDDD;
+}
+
+Button{
+    -fx-background-color: snow;
+    -fx-border-color: Transparent;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+
+    -fx-text-fill: skyblue;
+    -fx-arc-width: 10px;
+}
+Button:hover{
+    -fx-background-color: skyblue;
+    -fx-text-fill: snow;
+}
+Button:pressed{
+     -fx-background-color: snow;
+    -fx-text-fill: skyblue;
+}
+Text{
+    -fx-text-fill: snow;
+
+}
+TextField{
+-fx-border-color: snow;
+}
+TextField:hover{
+    -fx-border-color: skyblue;
+}
+TextField:pressed{
+     -fx-text-fill: snow;
+    -fx-background-color: skyblue;
+}
+#MessagesPane{
+    -fx-background-color: #222;
+}
+#Scroll{
+    -fx-background-color: #222;
+}

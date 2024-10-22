@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="1083.0" style="-fx-background-color: #222;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="osama.partone.HelloController">
+   <children>
+      <Button layoutX="446.0" layoutY="517.0" mnemonicParsing="false" onAction="#ToAll" prefHeight="32.0" prefWidth="167.0" text="Send To All">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="ArchiveAllButton" layoutX="623.0" layoutY="461.0" mnemonicParsing="false" onAction="#ArchiveAllMessages" prefHeight="39.0" prefWidth="118.0" text="Archive All ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="707.0" layoutY="332.0" mnemonicParsing="false" onAction="#SendButtonFunction" prefHeight="42.0" prefWidth="92.0" text="Send">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="ConnectButton" disable="true" layoutX="264.0" layoutY="465.0" mnemonicParsing="false" onAction="#ConnectButtonFunction" prefHeight="39.0" prefWidth="154.0" text="Connect">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="MessageArea" layoutX="54.0" layoutY="326.0" prefHeight="56.0" prefWidth="644.0" promptText="Enter Your Message" wrapText="true" />
+      <TextField fx:id="LocalIP" editable="false" layoutX="53.0" layoutY="420.0" />
+      <Text fill="WHITE" layoutX="53.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local IP" textAlignment="CENTER" wrappingWidth="149.33333333333326">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="LocalPort" editable="false" layoutX="53.0" layoutY="479.0" />
+      <Text fill="WHITE" layoutX="53.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Port" textAlignment="CENTER" wrappingWidth="149.33333333333326">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="RemoteIP" editable="false" layoutX="462.0" layoutY="420.0" />
+      <Text fill="WHITE" layoutX="462.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remote IP" textAlignment="CENTER" wrappingWidth="149.33333333333326">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="RemotePort" layoutX="462.0" layoutY="479.0" />
+      <Text fill="WHITE" layoutX="462.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Port" textAlignment="CENTER" wrappingWidth="149.33333333333326">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="ABox" layoutX="236.0" layoutY="418.0" prefHeight="25.0" prefWidth="205.0" />
+      <Text fill="WHITE" layoutX="248.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Interfaces" textAlignment="CENTER" wrappingWidth="149.33333333333326">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Pane layoutX="222.0" layoutY="401.0" prefHeight="104.0" prefWidth="1.0" style="-fx-background-color: black;" />
+      <Text fill="WHITE" layoutX="11.0" layoutY="42.0" stroke="WHITE" strokeWidth="0.0" text="C H A T" textAlignment="CENTER" underline="true" wrappingWidth="745.1111145019531">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button disable="true" layoutX="27.0" layoutY="514.0" mnemonicParsing="false" onAction="#CloseConnectionButton" prefHeight="42.0" prefWidth="323.0" text="Close Connection For Current Port">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ScrollPane fx:id="Scroll" layoutX="54.0" layoutY="53.0" prefHeight="259.0" prefWidth="751.0">
+        <content>
+          <AnchorPane fx:id="MessagesPane" minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="735.0">
+               <children>
+                  <VBox fx:id="VboxMessages" layoutX="3.0" layoutY="4.0" prefHeight="259.0" prefWidth="636.0" />
+                  <VBox fx:id="VBoxTime" layoutX="646.0" layoutY="4.0" prefHeight="268.0" prefWidth="76.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Button fx:id="ArchiveButton" layoutX="623.0" layoutY="514.0" mnemonicParsing="false" onAction="#ArchiveShowButton" prefHeight="32.0" prefWidth="118.0" text="Archive (0)">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="AddArchiveButton" layoutX="624.0" layoutY="410.0" mnemonicParsing="false" onAction="#AddToArchiveButton" prefHeight="39.0" prefWidth="118.0" text="Add To Archive">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Pane fx:id="ArchivePane" layoutY="-1.0" prefHeight="565.0" prefWidth="823.0" style="-fx-background-color: #222;" visible="false">
+         <children>
+            <VBox fx:id="VBoxArchiveMessages" layoutX="114.0" layoutY="60.0" prefHeight="421.0" prefWidth="524.0" style="-fx-background-color: #222;" />
+            <Text fill="WHITE" layoutX="138.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Archived Messages">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <VBox fx:id="VBoxArchiveTime" layoutX="643.0" layoutY="60.0" prefHeight="421.0" prefWidth="107.0" style="-fx-background-color: #222;" />
+            <Button layoutX="253.0" layoutY="507.0" mnemonicParsing="false" onAction="#RestoreClickedMessage" prefHeight="42.0" prefWidth="193.0" text="Reback Message">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button layoutX="14.0" layoutY="518.0" mnemonicParsing="false" onAction="#BackToMainPage" text="Back To Main Page" />
+            <Text fx:id="DeleteText" fill="WHITE" layoutX="459.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All Messages will automatic Delete in :" wrappingWidth="323.33333333333326">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
+            <Text fill="WHITE" layoutX="669.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <TextField fx:id="counter" layoutX="139.0" layoutY="20.0" visible="false" />
+      <Button layoutX="63.0" layoutY="20.0" mnemonicParsing="false" onAction="#TimerThread" text="Button" visible="false" />
+      <Button layoutX="911.0" layoutY="223.0" mnemonicParsing="false" onAction="#SendToTSPLogin" prefHeight="28.0" prefWidth="154.0" text="Login" />
+      <TextField fx:id="Password" layoutX="912.0" layoutY="183.0" />
+      <TextField fx:id="Username" layoutX="913.0" layoutY="139.0" />
+      <VBox fx:id="VBoxForOnline" layoutX="850.0" layoutY="349.0" prefHeight="200.0" prefWidth="226.0" />
+      <Text fill="WHITE" layoutX="840.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="840.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TextField editable="false" layoutX="914.0" layoutY="36.0" text="127.0.0.1" />
+      <TextField fx:id="ServerPort" layoutX="915.0" layoutY="71.0" />
+      <Text fill="WHITE" layoutX="838.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ServerIP">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="832.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Server Port">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="LogoutButton" layoutX="912.0" layoutY="269.0" mnemonicParsing="false" onAction="#LogoutButtonFunction" prefHeight="28.0" prefWidth="149.0" style="-fx-text-fill: red;" text="Logout" />
+      <Text fill="WHITE" layoutX="922.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Online Users">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="Status" layoutX="748.0" layoutY="418.0" prefHeight="26.0" prefWidth="83.0" />
+   </children>
+</AnchorPane>
